@@ -1,6 +1,6 @@
-## Batch ETL Pipeline into Amazon Redshift
+# 📘 Batch ETL Pipeline into Amazon Redshift
 
-## Objective
+## 🎯 Objective
 The goal of this project is to design and implement a batch ETL pipeline using AWS services.  
 - Store raw sales data in **S3**  
 - Transform data with **Glue ETL**  
@@ -10,7 +10,7 @@ The goal of this project is to design and implement a batch ETL pipeline using A
 
 ---
 
-## AWS Services Used
+## 🛠 AWS Services Used
 - **Amazon S3** → Raw & processed data storage  
 - **AWS Glue** → Data Catalog & ETL jobs  
 - **Amazon Redshift Serverless** → Data warehouse for queries  
@@ -20,7 +20,7 @@ The goal of this project is to design and implement a batch ETL pipeline using A
 
 ---
 
-##  Project Structure
+## 📂 Project Structure
 ```
 batch_etl_pipeline/
 │── providers.tf       # Configures AWS provider & region
@@ -37,7 +37,7 @@ batch_etl_pipeline/
 
 ---
 
-##  Architecture
+## 🏗 Architecture
 ```
 Data Generator (Python)
         ↓
@@ -54,7 +54,7 @@ Data Generator (Python)
 
 ---
 
-## What Each File Does
+## 📜 What Each File Does
 - **providers.tf** → Defines AWS provider and region  
 - **variables.tf** → Stores project variables (region, bucket names, etc.)  
 - **s3.tf** → Creates raw and processed S3 buckets  
@@ -67,7 +67,7 @@ Data Generator (Python)
 
 ---
 
-##  Workflow (Step by Step)
+## 🔄 Workflow (Step by Step)
 
 1. **Provision Infrastructure with Terraform**
    ```bash
@@ -97,14 +97,14 @@ Data Generator (Python)
 
 ---
 
-##  Why Not Use a Glue Crawler?
+## ❓ Why Not Use a Glue Crawler?
 - Schema is **fixed and known** (`id, product, price, quantity, date`)  
 - Defining tables directly in Terraform is **cheaper and reproducible**  
 - Avoids manual setup in the console  
 
 ---
 
-##  Example Query Results
+## ✅ Example Query Results
 | id       | product | price | quantity | date       |
 |----------|---------|-------|----------|------------|
 | 48857866 | item    | 10.5  | 2        | 2025-08-17 |
@@ -112,7 +112,7 @@ Data Generator (Python)
 
 ---
 
-##  Conclusion
+## 📌 Conclusion
 This project demonstrates a **scalable, automated Batch ETL pipeline** built on AWS.  
 It covers the full lifecycle: **Raw Data → S3 → Glue ETL → Processed Data → Redshift → SQL Analytics**.  
 
